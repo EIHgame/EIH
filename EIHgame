@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Definitions Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Word Definitions Game</h1>
+    <div class="question">
+      <p><strong>Question 1: What is the definition of the word "example"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question1" value="incorrect">
+            a) A small sample of something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" value="correct">
+            b) A thing characteristic of its kind or illustrating a general rule
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" value="incorrect">
+            c) A written or printed work consisting of pages glued or sewn together along one side and bound in covers
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more questions following the same format -->
+    <div class="question">
+      <p><strong>Question 2: What is the definition of the word "abundant"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question2" value="correct">
+            a) Existing or available in large quantities; plentiful
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" value="incorrect">
+            b) A person who studies and collects coins and banknotes
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" value="incorrect">
+            c) The act of moving or copying something from one place to another
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3: What is the definition of the word "ambiguous"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question3" value="correct">
+            a) Open to more than one interpretation; having a double meaning
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            b) A small, short-lived insect that feeds on the blood of humans and animals
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            c) A sudden and brief burst of light or heat
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 4: What is the definition of the word "diverse"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            a) A small round seed enclosed in a fruit, having the capacity to develop into a new plant
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="correct">
+            b) Showing a great deal of variety; very different
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            c) An act or instance of producing offspring or multiplying by such production
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 5: What is the definition of the word "eloquent"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            a) A person who is skilled in solving mathematical problems
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="correct">
+            b) Fluent or persuasive in speaking or writing; clearly expressing or indicating something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            c) The state or quality of being accountable; responsibility for one's actions
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more questions following the same format -->
+
+    <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var correctCount = 0;
+
+      // Check answers for question 1
+      var question1Answers = document.getElementsByName("question1");
+      if (question1Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 2
+      var question2Answers = document.getElementsByName("question2");
+      if (question2Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 3
+      var question3Answers = document.getElementsByName("question3");
+      if (question3Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 4
+      var question4Answers = document.getElementsByName("question4");
+      if (question4Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 5
+      var question5Answers = document.getElementsByName("question5");
+      if (question5Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Display the result
+      var result = document.getElementById("result");
+      result.innerHTML = "You scored " + correctCount + " out of 10.";
+
+      // Reset radio buttons after submission
+      for (var i = 0; i < question1Answers.length; i++) {
+        question1Answers[i].checked = false;
+      }
+      for (var i = 0; i < question2Answers.length; i++) {
+        question2Answers[i].checked = false;
+      }
+      for (var i = 0; i < question3Answers.length; i++) {
+        question3Answers[i].checked = false;
+      }
+      for (var i = 0; i < question4Answers.length; i++) {
+        question4Answers[i].checked = false;
+      }
+      for (var i = 0; i < question5Answers.length; i++) {
+        question5Answers[i].checked = false;
+      }
+
+      // Add more code to reset radio buttons for remaining questions
+    }
+  </script>
+</body>
+</html>
