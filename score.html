@@ -13,34 +13,29 @@
       max-width: 600px;
       margin: 0 auto;
       padding: 40px;
-      text-align: center;
     }
 
-    h1 {
+    .result {
+      text-align: center;
       font-size: 32px;
       margin-bottom: 30px;
-    }
-
-    .score {
-      font-size: 24px;
-      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Score Results</h1>
-    <div class="score">
-      <p>Your score: <strong>
-        <?php
-          if (isset($_GET['score'])) {
-            $score = $_GET['score'];
-            echo $score;
-          }
-        ?>
-      </strong></p>
-    </div>
-    <p>Thank you for playing!</p>
+    <div class="result" id="result"></div>
+
+    <script>
+      // Get the score from the query parameter in the URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var score = urlParams.get("score");
+
+      // Display the result
+      var result = document.getElementById("result");
+      result.innerHTML = "You scored " + score + " out of 5."; // Update the total number of questions here
+    </script>
   </div>
 </body>
 </html>
