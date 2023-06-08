@@ -71,7 +71,6 @@
       <!-- Display a message based on the score -->
       <span id="message"></span>
     </div>
-    <a href="index.html" class="play-again">Play Again</a>
 
     <script>
       // Retrieve the score value from the URL parameter
@@ -88,7 +87,7 @@
       } else if (score >= '3') {
         message = 'Great job! You did well!';
       } else {
-        message = 'Keep practicing! You can do better!';
+        message = 'Better luck next time!';
       }
       document.getElementById('message').textContent = message;
     </script>
