@@ -1,2 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English Definitions Quiz</title>
+  <style>
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>English Definitions Quiz</h1>
+
+    <div class="question">
+      <p><strong>Question 1: What is the definition of "happy"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="a"> a) Sad
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="b"> b) Feeling or showing pleasure or contentment
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="c"> c) Angry
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2: What is the definition of "cat"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="a"> a) A type of bird
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="b"> b) A large aquatic mammal
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="c"> c) A small domesticated carnivorous mammal
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3: What is the definition of "book"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="a"> a) A written or printed work consisting of pages glued or sewn together along one side and bound in covers
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="b"> b) A musical instrument with keys that are pressed to produce sound
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="c"> c) A type of footwear
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 4: What is the definition of "green"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="a"> a) A type of fruit
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="b"> b) Of the color between blue and yellow in the spectrum; colored like grass or emeralds
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="c"> c) A large body of water
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 5: What is the definition of "big"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="a"> a) Small in size or amount
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="b"> b) Having a great deal of importance or prominence
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="c"> c) Of considerable size, extent, or intensity
+          </label>
+        </li>
+      </ul>
+    </div>
+
+  <button class="submit-btn" onclick="calculateScore()">Submit</button>
+
+  <script>
+    function calculateScore() {
+      var correctCount = 0;
+
+      // Calculate the score based on the user's answers
+      // ...
+
+      // Redirect to the score page with the score as a parameter
+      window.location.href = "score.html?score=" + correctCount;
+    }
+  </script>
+</body>
+</html>
 
 
