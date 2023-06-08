@@ -215,8 +215,7 @@
 
     <!-- Add more questions following the same format -->
 
-    <button class="submit-btn" onclick="checkAnswers()">Submit</button>
-    <div class="result" id="result"></div>
+  <button class="submit-btn" onclick="checkAnswers()">Submit</button>
   </div>
 
   <script>
@@ -235,46 +234,10 @@
         correctCount++;
       }
 
-      // Check answers for question 3
-      var question3Answers = document.getElementsByName("question3");
-      if (question3Answers[0].checked) {
-        correctCount++;
-      }
+      // Check answers for more questions...
 
-      // Check answers for question 4
-      var question4Answers = document.getElementsByName("question4");
-      if (question4Answers[1].checked) {
-        correctCount++;
-      }
-
-      // Check answers for question 5
-      var question5Answers = document.getElementsByName("question5");
-      if (question5Answers[1].checked) {
-        correctCount++;
-      }
-
-      // Display the result
-      var result = document.getElementById("result");
-      result.innerHTML = "You scored " + correctCount + " out of 10.";
-
-      // Reset radio buttons after submission
-      for (var i = 0; i < question1Answers.length; i++) {
-        question1Answers[i].checked = false;
-      }
-      for (var i = 0; i < question2Answers.length; i++) {
-        question2Answers[i].checked = false;
-      }
-      for (var i = 0; i < question3Answers.length; i++) {
-        question3Answers[i].checked = false;
-      }
-      for (var i = 0; i < question4Answers.length; i++) {
-        question4Answers[i].checked = false;
-      }
-      for (var i = 0; i < question5Answers.length; i++) {
-        question5Answers[i].checked = false;
-      }
-
-      // Add more code to reset radio buttons for remaining questions
+      // Redirect to the score results page
+      window.location.href = "score.html?score=" + correctCount;
     }
   </script>
 </body>
