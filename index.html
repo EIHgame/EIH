@@ -5,6 +5,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
@@ -40,21 +42,17 @@
       margin-top: 20px;
     }
 
-    /* Responsive Styles */
     @media screen and (max-width: 600px) {
       .container {
-        max-width: 100%;
         padding: 10px;
       }
-    }
 
-    @media screen and (max-width: 400px) {
       .question {
-        font-size: 14px;
+        margin-bottom: 10px;
       }
 
-      .options li {
-        font-size: 12px;
+      .submit-btn {
+        margin-top: 10px;
       }
     }
   </style>
@@ -111,6 +109,78 @@
       </ul>
     </div>
 
+    <div class="question">
+      <p><strong>Question 3: What is the definition of the word "ambiguous"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question3" value="correct">
+            a) Open to more than one interpretation; having a double meaning
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            b) A small, short-lived insect that feeds on the blood of humans and animals
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            c) A sudden and brief burst of light or heat
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 4: What is the definition of the word "diverse"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            a) A small round seed enclosed in a fruit, having the capacity to develop into a new plant
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="correct">
+            b) Showing a great deal of variety; very different
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            c) An act or instance of producing offspring or multiplying by such production
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 5: What is the definition of the word "eloquent"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            a) A person who is skilled in solving mathematical problems
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="correct">
+            b) Fluent or persuasive in speaking or writing; clearly expressing or indicating something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            c) The state or quality of being accountable; responsibility for one's actions
+          </label>
+        </li>
+      </ul>
+    </div>
+
     <!-- Add more questions following the same format -->
 
     <button class="submit-btn" onclick="checkAnswers()">Submit</button>
@@ -133,7 +203,23 @@
         correctCount++;
       }
 
-      // Add more code to check answers for remaining questions
+      // Check answers for question 3
+      var question3Answers = document.getElementsByName("question3");
+      if (question3Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 4
+      var question4Answers = document.getElementsByName("question4");
+      if (question4Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 5
+      var question5Answers = document.getElementsByName("question5");
+      if (question5Answers[1].checked) {
+        correctCount++;
+      }
 
       // Display the result
       var result = document.getElementById("result");
@@ -145,6 +231,15 @@
       }
       for (var i = 0; i < question2Answers.length; i++) {
         question2Answers[i].checked = false;
+      }
+      for (var i = 0; i < question3Answers.length; i++) {
+        question3Answers[i].checked = false;
+      }
+      for (var i = 0; i < question4Answers.length; i++) {
+        question4Answers[i].checked = false;
+      }
+      for (var i = 0; i < question5Answers.length; i++) {
+        question5Answers[i].checked = false;
       }
 
       // Add more code to reset radio buttons for remaining questions
