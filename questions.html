@@ -255,17 +255,7 @@
       if (question5Answer && question5Answer.value === "c") {
         correctCount++;
       }
-
-      // Display the score on the page
-      document.getElementById("score").textContent = "Score: " + correctCount + " out of 5";
-
-      // Redirect to the next level HTML page after 3 seconds
-      setTimeout(proceedToNextLevel, 3000);
-    }
-
-    function proceedToNextLevel() {
-      // Redirect to the next level HTML page
-      window.location.href = "next-level.html";
+      window.location.href = "score.html?score=" + correctCount;
     }
   </script>
 </body>
