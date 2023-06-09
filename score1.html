@@ -40,6 +40,7 @@
       font-size: 24px;
       color: #555555;
     }
+
     .next {
       display: block;
       margin-top: 30px;
@@ -48,8 +49,8 @@
       background-color: #007bff;
       color: #ffffff;
       border: none;
-      border-radius: 6px;    
-    
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
@@ -64,13 +65,15 @@
       <span id="message"></span>
     </div>
 
+    <button onclick="proceedToNextLevel()" class="next">Proceed to Next Level</button>
+
     <script>
-      // Retrieve the score value from the URL parameter
+      // Retrieve the score from the URL parameter
       const urlParams = new URLSearchParams(window.location.search);
       const score = urlParams.get('score');
 
-      // Display the score dynamically
-      document.getElementById('score').textContent = score;
+      // Display the score on the page
+      document.getElementById("score").textContent = score;
 
       // Display a message based on the score
       let message = '';
@@ -81,27 +84,13 @@
       } else {
         message = 'Better luck next time!';
       }
-      document.getElementById('message').textContent = message;
+      document.getElementById("message").textContent = message;
+
+      function proceedToNextLevel() {
+        // Redirect to the next level HTML page
+        window.location.href = "medium-level.html";
+      }
     </script>
-  </style>
-</head>
-<body>
-  <h1>Your Quiz Score</h1>
-
-  <button onclick="proceedToNextLevel()" class="next">Proceed to Next Level</button>
-
-  <script>
-    // Retrieve the score from the URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const score = urlParams.get('score');
-
-    // Display the score on the page
-    document.getElementById("score").textContent = score;
-
-    function proceedToNextLevel() {
-      // Redirect to the next level HTML page
-      window.location.href = "medium-level.html";
-    }
-  </script>
+  </div>
 </body>
 </html>
