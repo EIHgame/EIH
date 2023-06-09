@@ -3,7 +3,106 @@
 <head>
   <title>English Definitions Quiz</title>
   <style>
-    /* Add your custom styles here */
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #333333;
+    }
+
+    .question {
+      margin-bottom: 40px;
+    }
+
+    .question p {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #555555;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: #666666;
+    }
+
+    .options input[type="radio"] {
+      transform: scale(2.5); /* Increase the scale as desired */
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 30px;
+      font-size: 40px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333333;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      .question p {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .options li {
+        font-size: 18px;
+      }
+
+      .submit-btn {
+        font-size: 40px;
+        padding: 10px 20px;
+      }
+
+      .result {
+        font-size: 28px;
+      }
   </style>
 </head>
 <body>
@@ -118,14 +217,43 @@
   <button class="submit-btn" onclick="calculateScore()">Submit</button>
 
   <script>
-    function calculateScore() {
+ <script>
+    function checkAnswers() {
       var correctCount = 0;
 
-      // Calculate the score based on the user's answers
-      // ...
+      // Check answers for question 1
+      var question1Answer = document.getElementById("question1").value;
+      if (question1Answer === "b") {
+        correctCount++;
+      }
 
-      // Redirect to the score page with the score as a parameter
-      window.location.href = "score.html?score=" + correctCount;
+      // Check answers for question 2
+      var question2Answer = document.getElementById("question2").value;
+      if (question2Answer === "c") {
+        correctCount++;
+      }
+
+      // Check answers for question 3
+      var question3Answer = document.getElementById("question3").value;
+      if (question3Answer === "a") {
+        correctCount++;
+      }
+
+      // Check answers for question 4
+      var question4Answer = document.getElementById("question4").value;
+      if (question4Answer === "b") {
+        correctCount++;
+      }
+
+      // Check answers for question 5
+      var question5Answer = document.getElementById("question5").value;
+      if (question5Answer === "c") {
+        correctCount++;
+      }
+
+      // Display the result
+      window.location.href = "score1.html?score=" + correctCount;
+    }
     }
   </script>
 </body>
