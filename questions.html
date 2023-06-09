@@ -115,7 +115,7 @@
       <ul class="options">
         <li>
           <label>
-            <input type="radio" name="question1" id="question1" value="a"> a) Sad
+            <input type="radio" name="question1" id="question1" value="a"> a) Feeling or showing great pleasure
           </label>
         </li>
         <li>
@@ -125,7 +125,7 @@
         </li>
         <li>
           <label>
-            <input type="radio" name="question1" id="question1" value="c"> c) Angry
+            <input type="radio" name="question1" id="question1" value="c"> c) Feeling or showing great excitement and pleasure
           </label>
         </li>
       </ul>
@@ -136,12 +136,12 @@
       <ul class="options">
         <li>
           <label>
-            <input type="radio" name="question2" id="question2" value="a"> a) A type of bird
+            <input type="radio" name="question2" id="question2" value="a"> a) A male domestic cat
           </label>
         </li>
         <li>
           <label>
-            <input type="radio" name="question2" id="question2" value="b"> b) A large aquatic mammal
+            <input type="radio" name="question2" id="question2" value="b"> b) A domestic cat with mottled black, brown, and orange markings resembling tortoiseshell
           </label>
         </li>
         <li>
@@ -162,12 +162,12 @@
         </li>
         <li>
           <label>
-            <input type="radio" name="question3" id="question3" value="b"> b) A musical instrument with keys that are pressed to produce sound
+            <input type="radio" name="question3" id="question3" value="b"> b) A single book or a bound collection of printed sheets
           </label>
         </li>
         <li>
           <label>
-            <input type="radio" name="question3" id="question3" value="c"> c) A type of footwear
+            <input type="radio" name="question3" id="question3" value="c"> c) A book, especially a large, heavy, scholarly one
           </label>
         </li>
       </ul>
@@ -178,7 +178,7 @@
       <ul class="options">
         <li>
           <label>
-            <input type="radio" name="question4" id="question4" value="a"> a) A type of fruit
+            <input type="radio" name="question4" id="question4" value="a"> a) Having much foliage
           </label>
         </li>
         <li>
@@ -188,7 +188,7 @@
         </li>
         <li>
           <label>
-            <input type="radio" name="question4" id="question4" value="c"> c) A large body of water
+            <input type="radio" name="question4" id="question4" value="c"> c) A colour
           </label>
         </li>
       </ul>
@@ -234,7 +234,7 @@
 </div>
 
 <div class="question">
-  <p><strong>Question 7: What is the definition of "ambiguous"?</strong></p>
+  <p><strong>Question 7: What is the definition of "fallacious"?</strong></p>
   <ul class="options">
     <li>
       <label>
@@ -243,7 +243,7 @@
     </li>
     <li>
       <label>
-        <input type="radio" name="question7" id="question7" value="b"> b) Having more than one possible meaning
+        <input type="radio" name="question7" id="question7" value="b"> b) Mistaken belief
       </label>
     </li>
     <li>
@@ -285,17 +285,17 @@
     </li>
     <li>
       <label>
-        <input type="radio" name="question9" id="question9" value="b"> b) Capable of being relied on; trustworthy
+        <input type="radio" name="question9" id="question9" value="b"> b) Unstable or unpredictable
       </label>
     </li>
     <li>
       <label>
-        <input type="radio" name="question9" id="question9" value="c"> c) Unstable or unpredictable
+        <input type="radio" name="question9" id="question9" value="c"> c) Capable of being relied on; trustworthy
       </label>
     </li>
     </div>
     <div class="question">
-      <p><strong>Question 10: What is the definition of "diverse"?</strong></p>
+      <p><strong>Question 10: What is the definition of "abscond"?</strong></p>
       <ul class="options">
         <li>
           <label>
@@ -304,12 +304,12 @@
         </li>
         <li>
           <label>
-            <input type="radio" name="question10" id="question10" value="b"> b) Having a variety of different elements or characteristics
+            <input type="radio" name="question10" id="question10" value="b"> b) Exclusive or limited in nature
           </label>
         </li>
         <li>
           <label>
-            <input type="radio" name="question10" id="question10" value="c"> c) Exclusive or limited in nature
+            <input type="radio" name="question10" id="question10" value="c"> c) Leave hurriedly and secretly
           </label>
         </li>
       </ul>
@@ -355,7 +355,33 @@
       if (question5Answer && question5Answer.value === "c") {
         correctCount++;
       }
-      window.location.href = "score1.html?score=" + correctCount;
+      // Check answers for question 6
+      var question5Answer = document.querySelector('input[name="question6"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;
+      }
+      // Check answers for question 7
+      var question5Answer = document.querySelector('input[name="question7"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;        
+      }
+      // Check answers for question 8
+      var question5Answer = document.querySelector('input[name="question8"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;        
+      }
+      // Check answers for question 9
+      var question5Answer = document.querySelector('input[name="question9"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
+        correctCount++; 
+      }
+      // Check answers for question 10
+      var question5Answer = document.querySelector('input[name="question10"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
+        correctCount++;
+      }  
+        
+      window.location.href = "score1.html?score=" + correctCount;      
     }
   </script>
 </body>
