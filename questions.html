@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>English Definitions Quiz</title>
+  <title id="title">Tell It!</title>
   <style>
+
     /* Reset some default styles */
     * {
       box-sizing: border-box;
@@ -103,6 +104,10 @@
       .result {
         font-size: 28px;
       }
+
+  </style>
+</head>
+<body>
   </style>
 </head>
 <body>
@@ -214,10 +219,12 @@
       </ul>
     </div>
 
-  <button class="submit-btn" onclick="calculateScore()">Submit</button>
+    <!-- Add more questions following the same format -->
+
+  <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+  </div>
 
   <script>
- <script>
     function checkAnswers() {
       var correctCount = 0;
 
@@ -251,11 +258,16 @@
         correctCount++;
       }
 
-      // Display the result
-      window.location.href = "score1.html?score=" + correctCount;
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = urlParams.get('score');
+
+    // Display the score on the page
+    document.getElementById("score").textContent = score;
+
+    function proceedToNextLevel() {
+      // Redirect to the next level HTML page
+      window.location.href = "next-level.html";
     }
   </script>
 </body>
 </html>
-
-
