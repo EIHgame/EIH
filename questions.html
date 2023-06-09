@@ -3,7 +3,6 @@
 <head>
   <title id="title">Tell It!</title>
   <style>
-
     /* Reset some default styles */
     * {
       box-sizing: border-box;
@@ -104,10 +103,7 @@
       .result {
         font-size: 28px;
       }
-
-  </style>
-</head>
-<body>
+    }
   </style>
 </head>
 <body>
@@ -224,45 +220,48 @@
   <button class="submit-btn" onclick="checkAnswers()">Submit</button>
   </div>
 
+  <div id="score" class="result"></div> <!-- Add a div to display the score -->
+
   <script>
     function checkAnswers() {
       var correctCount = 0;
 
       // Check answers for question 1
-      var question1Answer = document.getElementById("question1").value;
-      if (question1Answer === "b") {
+      var question1Answer = document.querySelector('input[name="question1"]:checked');
+      if (question1Answer && question1Answer.value === "b") {
         correctCount++;
       }
 
       // Check answers for question 2
-      var question2Answer = document.getElementById("question2").value;
-      if (question2Answer === "c") {
+      var question2Answer = document.querySelector('input[name="question2"]:checked');
+      if (question2Answer && question2Answer.value === "c") {
         correctCount++;
       }
 
       // Check answers for question 3
-      var question3Answer = document.getElementById("question3").value;
-      if (question3Answer === "a") {
+      var question3Answer = document.querySelector('input[name="question3"]:checked');
+      if (question3Answer && question3Answer.value === "a") {
         correctCount++;
       }
 
       // Check answers for question 4
-      var question4Answer = document.getElementById("question4").value;
-      if (question4Answer === "b") {
+      var question4Answer = document.querySelector('input[name="question4"]:checked');
+      if (question4Answer && question4Answer.value === "b") {
         correctCount++;
       }
 
       // Check answers for question 5
-      var question5Answer = document.getElementById("question5").value;
-      if (question5Answer === "c") {
+      var question5Answer = document.querySelector('input[name="question5"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
         correctCount++;
       }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const score = urlParams.get('score');
+      // Display the score on the page
+      document.getElementById("score").textContent = "Score: " + correctCount + " out of 5";
 
-    // Display the score on the page
-    document.getElementById("score").textContent = score;
+      // Redirect to the next level HTML page after 3 seconds
+      setTimeout(proceedToNextLevel, 3000);
+    }
 
     function proceedToNextLevel() {
       // Redirect to the next level HTML page
